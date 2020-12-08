@@ -21,12 +21,7 @@ test_script:
   # This is pretty lazy -- we don't go into an empty dir or anything.
   # I think pytest will test the installed version? But I dunno the
   # coverage will actually work right if just given as "trustme"
-  - >-
-    python -u -m
-    pytest -W error
-    -ra -v -s tests
-    --cov=trustme --cov=tests --cov-config=.coveragerc
-    --junitxml=.test-results/pytest/results.xml
+  - python -u -m pytest
   - "codecov -F windows"
 
 on_finish:

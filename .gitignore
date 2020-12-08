@@ -66,3 +66,6 @@ doc/_build/
 
 # pyenv
 .python-version
+
+# pytest coverage and test results XML outputs
+/.test-results/

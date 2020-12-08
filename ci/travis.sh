@@ -23,7 +23,7 @@ else
     mkdir empty
     pushd empty
     INSTALLDIR=$(python -c "import os, trustme; print(os.path.dirname(trustme.__file__))")
-    pytest -W error -ra -s ../tests --cov="$INSTALLDIR" --cov=../tests --cov-config="../.coveragerc"
+    pytest -c ../pytest.ini ../tests --cov="$INSTALLDIR" --cov=../tests --cov-config="../.coveragerc"
 
     pip install codecov
     codecov -F $(uname | tr A-Z a-z)
